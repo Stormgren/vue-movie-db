@@ -1,4 +1,5 @@
 <template>
+<transition name="fade">
     <div class="movie-wrapper" :style="styles">
       <div class="movie-info">
         <h1>{{movie.title}}</h1>
@@ -6,6 +7,7 @@
         <p>{{movie.overview}}</p>
       </div>
     </div>
+    </transition>
 </template>
 
 <script>
@@ -48,11 +50,21 @@ const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280'
 .movie-wrapper {
     position: relative;
     padding-top: 50vh;
-    background-size: cover;
+    background-size: cover; 
 }
 .movie-info {
     background: white;
     color: #222;
     padding: 2rem 10%;
 }
+
+  .fade-enter-active,
+    .fade-leave-active {
+        transition: all 0.3s ease;
+    }
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
 </style>
