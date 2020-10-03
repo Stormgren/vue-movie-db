@@ -1,6 +1,7 @@
 <template>
     <header>
         <h1><router-link to="/">{{title}}</router-link></h1>
+        
     </header>
 </template>
 
@@ -9,7 +10,7 @@
         name: 'Header',
         props: {
             title: String
-        }
+        },
     }
 </script>
 
@@ -22,4 +23,5 @@
     h1 {
         margin: 0;
     }
+
 </style>
